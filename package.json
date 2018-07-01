@@ -1,0 +1,39 @@
+{
+  "name": "@alesmenzel/function-arguments",
+  "version": "0.1.0",
+  "description": "Parse function arguments",
+  "main": "index.js",
+  "scripts": {
+    "test:suite": "mocha ./src/**/*.spec.js",
+    "test:lint": "eslint .",
+    "test": "run-s test:lint test:suite",
+    "format": "prettier --write src/**/*.js"
+  },
+  "keywords": [
+    "function",
+    "arguments",
+    "utility"
+  ],
+  "author": "Aleš Menzel <alesmenzel@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "^0.15.0-rc.8",
+    "mocha": "^5.0.1",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.10.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format",
+      "pre-push": "npm test"
+    }
+  }
+}
