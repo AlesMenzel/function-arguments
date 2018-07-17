@@ -69,7 +69,7 @@ const resolveArguments = fn => {
   }
 
   const stringFn = fn.toString();
-  const ast = acorn.parse(stringFn);
+  const ast = acorn.parse(`(${stringFn})`);
   const node = ast.body[0];
   const strategy = strategies[node.type];
 
