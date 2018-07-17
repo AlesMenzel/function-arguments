@@ -35,5 +35,8 @@
       "pre-commit": "npm run format",
       "pre-push": "npm test"
     }
+  },
+  "dependencies": {
+    "acorn": "^5.7.1"
   }
 }

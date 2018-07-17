@@ -64,4 +64,27 @@ describe('function-arguments', () => {
     result = isFunction(subject);
     expect(result).to.be.deep.equal(['a', 'b']);
   });
+
+  it('should handle any default parameter', () => {
+    // eslint-disable-next-line
+    const subject = (a, b = 1, c = Math.square(4), d = (a, b) => console.log("h"), alert) => {
+      return () => {};
+    };
+    const result = isFunction(subject);
+    expect(result).to.be.deep.equal(['a', 'b', 'c', 'd', 'alert']);
+  });
+
+  it('should handle any format', () => {
+    /* eslint-disable */
+    const subject = (a,
+      b = 1, c =   Math.square(4),
+      d = (a,   b) => console.log("h"),
+      alert
+    ) => {
+      return () => {};
+    };
+    /* eslint-enable */
+    const result = isFunction(subject);
+    expect(result).to.be.deep.equal(['a', 'b', 'c', 'd', 'alert']);
+  });
 });
