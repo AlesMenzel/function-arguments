@@ -1,6 +1,6 @@
 # Function arguments
 
-Parses function arguments and returns an array.
+Parses function arguments and returns an array of parameter names. Uses AST parser [acorn](https://github.com/acornjs/acorn) and can handle functions with default parameters.
 
 ## Instalation
 
@@ -24,7 +24,7 @@ functionArguments(subject);
 
 
 // ES6
-const subject = (a, b, c) => {};
+const subject = (a, b = 15, c) => {};
 
 functionArguments(subject);
 // ["a", "b", "c"]
