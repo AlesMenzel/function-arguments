@@ -66,19 +66,28 @@ describe('function-arguments', () => {
   });
 
   it('should handle any default parameter', () => {
-    // eslint-disable-next-line
-    const subject = (a, b = 1, c = Math.square(4), d = (a, b) => console.log("h"), alert) => {
+    /* eslint-disable */
+    const subject = (
+      a,
+      b = 1,
+      c = Math.sqrt(4),
+      d = (a, b) => console.log('h'),
+      alert
+    ) => {
       return () => {};
     };
+    /* eslint-enable */
     const result = isFunction(subject);
     expect(result).to.be.deep.equal(['a', 'b', 'c', 'd', 'alert']);
   });
 
   it('should handle any format', () => {
     /* eslint-disable */
-    const subject = (a,
-      b = 1, c =   Math.square(4),
-      d = (a,   b) => console.log("h"),
+    const subject = (
+      a,
+      b = 1,
+      c = Math.sqrt(4),
+      d = (a, b) => console.log('h'),
       alert
     ) => {
       return () => {};
