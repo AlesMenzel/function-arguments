@@ -45,5 +45,10 @@
       "pre-commit": "lint-staged",
       "pre-push": "npm test"
     }
-  }
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ]
 }
